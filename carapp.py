@@ -29,11 +29,8 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # ---------- Load Data ----------
-@st.cache_data
-def load_data():
-    return pd.read_csv("car.csv")
 
-df = load_data()
+df = pd.read_csv("car.csv")
 df.fillna(df.mode().iloc[0], inplace=True)
 
 # ---------- Encode Data ----------
